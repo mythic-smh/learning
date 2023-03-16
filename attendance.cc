@@ -1,18 +1,24 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
     // Variables for data 
-
+    string answer;
     float classesAttended;
     float classesTotal;
-    // Get user data
+
+
+   // Get user data
 
     cout << "This is a test to see what percent of classes youve been in to see if you can sit in the exam." << endl;
     cout << "How many classes has been held?" << endl;
     cin >> classesTotal;
     cout << "How many classes have you been to?" << endl;
     cin >> classesAttended;
+    cout << "Just to make sure we need to know if you have any medical conditions." << endl;
+    cout << "Please type \"N\" if you do not have any medical condtions and \"Y\" if you do" << endl;
+    cin >> answer;
     // Make sure 'classesTotal' is not 0
 
     if (classesTotal == 0) {
@@ -23,10 +29,11 @@ int main() {
     float percentage = (classesAttended / classesTotal) * 100; 
     
     // Tell them if they can or can't write the exam
-    if (percentage < 75) {
-    cout << "Sorry, you cannot write the exam". << endl;
-    } else {            // percentage must be greater than or equal to 75
-    cout << "You can write the exam!" << endl;
+    if (answer == "Y" || answer == "y" && percentage < 75) {
+    cout << "You cannot sit in the exam." << endl;
+} else if (answer == "N" || answer == "n" && percentage > 75) {
+    cout << "You can sit in the exam!" << endl;
 }
+
     return 0;   // Exits program
 }
