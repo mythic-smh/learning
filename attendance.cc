@@ -31,7 +31,7 @@ int main() {
     // Tell them if they can or can't write the exam
     if (answer == "N" || answer == "n" && percentage < 75) {
     cout << "You cannot sit in the exam." << endl;
-} else if (answer == "Y" || answer == "y" && percentage > 75) {
+} else if (answer == "Y" || answer == "y" && percentage >= 75) {
     cout << "You can sit in the exam!" << endl;
 }
 
